@@ -1,0 +1,98 @@
+{
+    "usuários":
+    [
+        {
+            "id_usuario": "123456",
+            "dados_do_usuario":
+            {
+                "nome_completo": "Julia Gonçalves dos Santos",
+                "data_de_nascimento": "18/02/2004",
+                "email": "julia@gmail.com"
+            },
+            "dados_voo":
+            {
+                "id_voo": "2345678",
+                "nome_do_voo": "AZL-1062",
+                "assento": "B10",
+                "data_da_partida": "06/12/2023",
+                "origem": "Maceió",
+                "destino": "Goiás"
+            },
+            "dados_hotel":
+            {
+                "id_hotel":"BRM-123",
+                "nome_da_cidade": "Jataí",
+                "hotel": "Ibis",
+                "reviews": [
+                            "Gostei muito, não voltaria", 
+                            "Tava bom o pequi, mas sem galinha",
+                            "Cidade feia"
+                            ],
+                "nota": 5
+            },
+            "dados_roteiro":
+            {
+                "id_roteiro": "ABL-1023",
+                "nome_do_guia": "João Carlos Gonçalves dos Santos",
+                "lista_de_atividades": [
+                                        "Ir no lago", 
+                                        "Comer pequi",
+                                        "Andar no parque"
+                                        ],
+                "reviews": [
+                            "Top demais", 
+                            "Curti muito o calor, perdi 2kg",
+                            "Cidade Feia"
+                            ],
+                "nota": 2
+            }
+        },
+        {
+            "id_usuario": "999999",
+            "dados_do_usuario":
+            {
+                "nome_completo": "Ana Claudia",
+                "data_de_nascimento": "21/05/2015",
+                "email": "claudia@gmail.com"
+            },
+            "dados_voo":
+            {
+                "id_voo": "22323678",
+                "nome_do_voo": "GOL-1033",
+                "assento": "A10",
+                "data_da_partida": "13/01/2023",
+                "origem": "Manaus",
+                "destino": "João Pessoa"
+            },
+            "dados_hotel":
+            {
+                "id_hotel":"TRA-123",
+                "nome_da_cidade": "João Pessoa",
+                "hotel": "Ideas Park",
+                "reviews": [
+                            "Gostei muito, não voltaria", 
+                            "Tava bom o pequi, mas sem galinha",
+                            "Cidade feia"
+                            ],
+                "nota": 1
+            },
+            "dados_roteiro":
+            {
+                "id_roteiro": "AAA-1111",
+                "nome_do_guia": "Pedro Cavalcante",
+                "lista_de_atividades": [
+                                        "Ir no lago", 
+                                        "Comer pequi",
+                                        "Andar no parque"
+                                        ],
+                "reviews": [
+                            "Top demais", 
+                            "Curti muito o calor, perdi 2kg",
+                            "Cidade Feia"
+                            ],
+                "nota": 2
+            }
+        }
+    ]
+}
+
