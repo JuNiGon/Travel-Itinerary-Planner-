@@ -1,0 +1,42 @@
+{
+    "dados_do_usuario": {
+        "nome_completo": "Ana Claudia Goncalves dos Santos",
+        "data_de_nascimento": "21/05/2015",
+        "email": "claudia@gmail.com"
+    },
+    "dados_voo": {
+        "id_voo": "22323678",
+        "nome_do_voo": "GOL-1033",
+        "assento": "A10",
+        "data_da_partida": "13/01/2023",
+        "origem": "Manaus",
+        "destino": "Joao Pessoa"
+    },
+    "dados_hotel": {
+        "id_hotel": "TRA-123",
+        "nome_da_cidade": "Joao Pessoa",
+        "hotel": "Ideas Park",
+        "reviews": [
+            "Gostei muito, nao voltaria",
+            "Tava bom o pequi, mas sem galinha",
+            "Cidade feia"
+        ],
+        "nota": 1
+    },
+    "dados_roteiro": {
+        "id_roteiro": "AAA-1111",
+        "nome_do_guia": "Pedro Cavalcante",
+        "lista_de_atividades": [
+            "Ir no lago",
+            "Comer pequi",
+            "Andar no parque"
+        ],
+        "reviews": [
+            "Top demais",
+            "Curti muito o calor, perdi 2kg",
+            "Cidade Feia"
+        ],
+        "nota": 2
+    },
+    "id_usuario": "3f307e7c-4da2-4efd-95ba-36d599f966b4"
+}
