@@ -1,0 +1,51 @@
+Usurios
+
+# Ver usuarios
+Método: GET
+/user/get_users
+
+# Adicionar usuário
+Método: POST
+/user/add
+{
+    "dados_do_usuario":
+    {
+        "nome_completo": str,
+        "data_de_nascimento": str,
+        "email": str
+    },
+    "dados_voo":
+    {
+        "id_voo": str,
+        "nome_do_voo": str,
+        "assento": str,
+        "data_da_partida": str,
+        "origem": str,
+        "destino": str
+    },
+    "dados_hotel":
+    {
+        "id_hotel": str,
+        "nome_da_cidade": str,
+        "hotel": str,
+        "reviews": list,
+        "nota": integer
+    },
+    "dados_roteiro":
+    {
+        "id_roteiro": str,
+        "nome_do_guia": str,
+        "lista_de_atividades": list,
+        "reviews": list,
+        "nota": integer
+    }
+}
+
+# Editar informações usuáio
+Método: POST
+/user/update/user_id{123456}
+
+
+# Deletar usuário
+Método: POST
+/user/delete/user_id{id_usuario}
