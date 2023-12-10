@@ -1,0 +1,40 @@
+{
+    "roteiros": [
+        {
+            "dados_roteiro": {
+                "id_roteiro": "AAA-1111",
+                "nome_da_cidade": "Jatai",
+                "nome_do_guia": "Pedro Cavalcante",
+                "lista_de_atividades": [
+                    "Ir no lago",
+                    "Comer pequi",
+                    "Andar no parque"
+                ],
+                "reviews": [
+                    "Top demais",
+                    "Curti muito o calor, perdi 2kg",
+                    "Cidade Feia"
+                ],
+                "nota": 2
+            }
+        },
+        {
+            "dados_roteiro": {
+                "id_roteiro": "BBB-1111",
+                "nome_da_cidade": "Maceio",
+                "nome_do_guia": "Jones Cavalcante",
+                "lista_de_atividades": [
+                    "Ir no lago",
+                    "Comer pequi",
+                    "Andar no parque"
+                ],
+                "reviews": [
+                    "Top demais",
+                    "Curti muito o calor, perdi 2kg",
+                    "Cidade Feia"
+                ],
+                "nota": 2
+            }
+        }
+    ]
+}

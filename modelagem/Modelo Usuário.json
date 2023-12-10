@@ -33,6 +33,7 @@
             "dados_roteiro":
             {
                 "id_roteiro": "ABL-1023",
+                "nome_da_cidade": "Jataí",
                 "nome_do_guia": "João Carlos Gonçalves dos Santos",
                 "lista_de_atividades": [
                                         "Ir no lago", 
