@@ -1,0 +1,54 @@
+{
+    "destinos": [
+      {
+        "cidade": "Paris",
+        "pais": "França",
+        "descricao": "A cidade do amor, conhecida por sua arquitetura icônica e cultura sofisticada.",
+        "pontos_turisticos": ["Torre Eiffel", "Louvre", "Notre-Dame"],
+        "dicas": ["Experimente croissants em uma autêntica padaria parisiense.", "Faça um passeio de barco no Rio Sena."]
+      },
+      {
+        "cidade": "Nova York",
+        "pais": "Estados Unidos",
+        "descricao": "A cidade que nunca dorme, famosa por seus arranha-céus, teatros da Broadway e diversidade cultural.",
+        "pontos_turisticos": ["Estátua da Liberdade", "Central Park", "Times Square"],
+        "dicas": ["Explore os bairros únicos, como o SoHo e o Greenwich Village.", "Assista a um espetáculo da Broadway."]
+      },
+      {
+        "cidade": "Tóquio",
+        "pais": "Japão",
+        "descricao": "A capital futurista do Japão, misturando tradição e tecnologia de ponta.",
+        "pontos_turisticos": ["Templo Senso-ji", "Shibuya Crossing", "Parque Ueno"],
+        "dicas": ["Experimente sushi fresco em Tsukiji Fish Market.", "Visite os jardins imperiais."]
+      },
+      {
+        "cidade": "Manaus",
+        "pais": "Brasil",
+        "descricao": "A porta de entrada para a Amazônia, conhecida por sua biodiversidade única e passeios fluviais emocionantes.",
+        "pontos_turisticos": ["Teatro Amazonas", "Encontro das Águas", "Mercado Adolpho Lisboa"],
+        "dicas": ["Explore a Floresta Amazônica em uma excursão guiada.", "Experimente pratos de peixe local."]
+      },
+      {
+        "cidade": "Palmas",
+        "pais": "Brasil",
+        "descricao": "A mais jovem capital do Brasil, localizada no coração do país, cercada por natureza exuberante.",
+        "pontos_turisticos": ["Praia da Graciosa", "Praça dos Girassóis", "Ponte da Amizade"],
+        "dicas": ["Aproveite o pôr do sol na Praia da Graciosa.", "Visite o Memorial Coluna Prestes."]
+      },
+      {
+        "cidade": "Aracaju",
+        "pais": "Brasil",
+        "descricao": "A capital sergipana, conhecida por suas praias deslumbrantes, culinária saborosa e cultura acolhedora.",
+        "pontos_turisticos": ["Orla de Atalaia", "Praia do Saco", "Mercado Municipal Thales Ferraz"],
+        "dicas": ["Experimente os pratos à base de frutos do mar.", "Passeie pela Orla de Atalaia à noite."]
+      },
+      {
+        "cidade": "Maceió",
+        "pais": "Brasil",
+        "descricao": "A capital do estado de Alagoas, famosa por suas praias de águas cristalinas e coqueirais.",
+        "pontos_turisticos": ["Praia de Ponta Verde", "Praia do Francês", "Lagoa Mundaú"],
+        "dicas": ["Faça um passeio de jangada até as piscinas naturais.", "Desfrute da culinária regional nos restaurantes à beira-mar."]
+      }
+    ]
+  }
+  

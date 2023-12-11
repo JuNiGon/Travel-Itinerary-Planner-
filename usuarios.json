@@ -1,11 +1,60 @@
 [
     {
         "dados_do_usuario": {
-            "nome_completo": "Ana Claudia Goncalves dos Santos",
-            "data_de_nascimento": "21/05/2015",
-            "email": "claudia@gmail.com"
+            "nome_completo": "Maria Oliveira",
+            "data_de_nascimento": "10/03/1992",
+            "email": "maria.oliveira@gmail.com",
+            "valor_total": 1800
         },
         "dados_voo": {
+            "valor_voo": 1000,
+            "id_voo": "98765432",
+            "nome_do_voo": "TAM-456",
+            "assento": "C22",
+            "data_da_partida": "25/03/2023",
+            "origem": "Recife",
+            "destino": "Salvador"
+        },
+        "dados_hotel": {
+            "valor_hotel": 500,
+            "id_hotel": "HOT-789",
+            "nome_da_cidade": "Salvador",
+            "hotel": "Ocean View",
+            "reviews": [
+                "Localizacao perfeita",
+                "Equipe atenciosa",
+                "otimo servico"
+            ],
+            "nota": 4
+        },
+        "dados_roteiro": {
+            "valor_roteiro": 300,
+            "id_roteiro": "XYZ-123",
+            "nome_da_cidade": "Salvador",
+            "nome_do_guia": "Jose Silva",
+            "lista_de_atividades": [
+                "Pelourinho historico",
+                "Praia do Farol",
+                "Mercado Modelo"
+            ],
+            "reviews": [
+                "Guia muito conhecedor",
+                "Roteiro diversificado",
+                "Experiencia incrivel"
+            ],
+            "nota": 5
+        },
+        "id_usuario": "e637e53c-d046-49be-9e25-c3125111cf82"
+    },
+    {
+        "dados_do_usuario": {
+            "nome_completo": "Ana Claudia Goncalves dos Santos",
+            "data_de_nascimento": "21/05/2015",
+            "email": "claudia@gmail.com",
+            "valor_total": 800
+        },
+        "dados_voo": {
+            "valor_voo": 100,
             "id_voo": "22323678",
             "nome_do_voo": "GOL-1033",
             "assento": "A10",
@@ -14,6 +63,7 @@
             "destino": "Joao Pessoa"
         },
         "dados_hotel": {
+            "valor_hotel": 600,
             "id_hotel": "TRA-123",
             "nome_da_cidade": "Joao Pessoa",
             "hotel": "Ideas Park",
@@ -25,6 +75,7 @@
             "nota": 1
         },
         "dados_roteiro": {
+            "valor_roteiro": 100,
             "id_roteiro": "AAA-1111",
             "nome_da_cidade": "Jatai",
             "nome_do_guia": "Pedro Cavalcante",
@@ -40,6 +91,98 @@
             ],
             "nota": 2
         },
-        "id_usuario": "00882685-05e2-498c-b03e-a256afc421d3"
+        "id_usuario": "145f589e-ae17-43f0-b8b6-b958c5c9754d"
+    },
+    {
+        "dados_do_usuario": {
+            "nome_completo": "Alex",
+            "data_de_nascimento": "21/05/2015",
+            "email": "alex@gmail.com",
+            "valor_total": 450
+        },
+        "dados_voo": {
+            "valor_voo": 200,
+            "id_voo": "22323678",
+            "nome_do_voo": "GOL-1033",
+            "assento": "c40",
+            "data_da_partida": "13/01/2023",
+            "origem": "palmas",
+            "destino": "Joao Pessoa"
+        },
+        "dados_hotel": {
+            "valor_hotel": 150,
+            "id_hotel": "TRA-123",
+            "nome_da_cidade": "Joao Pessoa",
+            "hotel": "Ideas Park",
+            "reviews": [
+                "Gostei muito, nao voltaria",
+                "Tava bom o pequi, mas sem galinha",
+                "Cidade feia"
+            ],
+            "nota": 1
+        },
+        "dados_roteiro": {
+            "valor_roteiro": 100,
+            "id_roteiro": "AAA-1111",
+            "nome_do_guia": "Pedro Cavalcante",
+            "lista_de_atividades": [
+                "Ir no lago",
+                "Comer pequi",
+                "Andar no parque"
+            ],
+            "reviews": [
+                "legal",
+                "Curti muito o calor, perdi 2kg",
+                "Cidade Feia"
+            ],
+            "nota": 2
+        },
+        "id_usuario": "9f3a3bc6-0833-4d5a-859b-d444187931a2"
+    },
+    {
+        "dados_do_usuario": {
+            "nome_completo": "clara Santos",
+            "data_de_nascimento": "21/05/2015",
+            "email": "clara@gmail.com",
+            "valor_total": 450
+        },
+        "dados_voo": {
+            "valor_voo": 200,
+            "id_voo": "22323678",
+            "nome_do_voo": "GOL-1033",
+            "assento": "c40",
+            "data_da_partida": "13/01/2023",
+            "origem": "palmas",
+            "destino": "Joao Pessoa"
+        },
+        "dados_hotel": {
+            "valor_hotel": 150,
+            "id_hotel": "TRA-123",
+            "nome_da_cidade": "Joao Pessoa",
+            "hotel": "Ideas Park",
+            "reviews": [
+                "Gostei muito, nao voltaria",
+                "Tava bom o pequi, mas sem galinha",
+                "Cidade feia"
+            ],
+            "nota": 1
+        },
+        "dados_roteiro": {
+            "valor_roteiro": 100,
+            "id_roteiro": "AAA-1111",
+            "nome_do_guia": "Pedro Cavalcante",
+            "lista_de_atividades": [
+                "Ir no lago",
+                "Comer pequi",
+                "Andar no parque"
+            ],
+            "reviews": [
+                "legal",
+                "Curti muito o calor, perdi 2kg",
+                "Cidade Feia"
+            ],
+            "nota": 2
+        },
+        "id_usuario": "e0de0ea6-b75c-4ea2-b2f3-55e4c46d4978"
     }
 ]

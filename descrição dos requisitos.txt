@@ -1,0 +1,42 @@
+1- Itinerary Creation and Customization: Users can create and customize travel itineraries;
+	- @app.post("/user/add") cria usuario, dados de hotel, voos e roteiros 
+	- @app.post("/user/update/{user_id}") edita dados dos usuarios, hotel, voos e roteiros
+	- @app.post("/user/delete/{user_id}") deleta uusuário
+
+
+2- Destination Information and Recommendations: Providing information and recommendations on destinations;
+	- @app.get("/itineraries/search-itineraries/{nome_da_cidade}") buscar roteiros pelo nome da cidade e retornar aquele comm maior nota
+	- a busca é feita em roteiros.json
+
+
+3- Booking Integration: Integrating with booking systems for hotels, flights, and activities;
+	- roteiros.json arquivo JSON com hoteis, voos e atividades
+	- @app.post("/itineraries/add") para adicionar um novo roteiro
+
+
+4- Collaborative Planning Tools: Tools for collaborative itinerary planning with other travelers;
+	- @app.post("/user/copy-itinerary/{id_usuario_1}/{id_usuario_2}") apos por o seu id e o de outra pessoa. O seu itinerario vira o mesmo dela
+
+5-  Travel Guides and Resources: Access to travel guides and resources;
+	- @app.get("/cidade/{nome_cidade}") retorna informações sobre o local passado(descrição, dicas, pontos turisticos, país)
+	- as informações estão em informacoes_destinos.json
+
+6- Personalization Based on Preferences: Personalizing recommendations based on user 
+preferences;
+	- @app.get("/user/personalized-recommendations/{user_id}") a partir do id do usuário ele procura em roteiros.json se existe algum roteiro com a mesma cidade origem no itinerário do usuário. Se não houver, indica o com a maior nota
+
+
+7- Map Integration and Route Planning: Integrating maps for route planning and navigation;
+	- @app.get("/maps/coordinates/{cidade}") retorna coordenadas a partir de uma cidade origem e destino(parte visual no frontend)
+
+
+8- Expense Tracking and Budget Management: Tracking travel expenses and managing budgets;
+	- @app.post("/user/add") adiciona as informações sobre a viagem e faz o calculo da soma dos valores de voo, hotel e roteiro. A despesa é arvazenada em valor_total
+
+
+9-  Mobile Access and Offline Functionality: Ensuring accessibility on mobile devices, including offline access;
+	- funciona parcialmente(ex: não possui acesso ao mapa)
+
+10- User Reviews and Community Input: Incorporating user reviews and community suggestions into planning
+	- @app.post("/user/add") possível deixar avaliações ao criar itinerario do usuário
+	- @app.post("/itineraries/add") possível deixar avaliações ao enviar um novo roteiro

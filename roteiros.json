@@ -107,6 +107,60 @@
         ],
         "nota": 1
       }
+    },
+    {
+      "dados_roteiro": {
+        "id_roteiro": "BfA-1134",
+        "nome_da_cidade": "Jatai",
+        "nome_do_guia": "Lucas Cavalcante",
+        "lista_de_atividades": [
+          "Ir no lago",
+          "Comer pequi",
+          "Andar no parque"
+        ],
+        "reviews": [
+          "Top demais",
+          "Curti muito o calor, perdi 2kg",
+          "Muitos cachorros"
+        ],
+        "nota": 3
+      }
+    },
+    {
+      "dados_roteiro": {
+        "id_roteiro": "BfA-1901",
+        "nome_da_cidade": "Palmas",
+        "nome_do_guia": "Lucas Cavalcante",
+        "lista_de_atividades": [
+          "Ir no lago",
+          "Comer pequi",
+          "Andar no parque"
+        ],
+        "reviews": [
+          "Top demais",
+          "Curti muito o calor, perdi 2kg",
+          "Cidade Feia"
+        ],
+        "nota": 1
+      }
+    },
+    {
+      "dados_roteiro": {
+        "id_roteiro": "GHF-1901",
+        "nome_da_cidade": "Aracaju",
+        "nome_do_guia": "Roberto",
+        "lista_de_atividades": [
+          "Ir no lago",
+          "Comer pequi",
+          "Andar no parque"
+        ],
+        "reviews": [
+          "Top demais",
+          "Curti muito o calor, perdi 2kg",
+          "Cidade Feia"
+        ],
+        "nota": 1
+      }
     }
   ]
 }
