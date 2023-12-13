@@ -5,14 +5,10 @@ import requests
 
 app = FastAPI()
 
-# Caminho para os arquivos JSON que armazenam os dados
-
 INFORMACOES_DESTINOS_FILE = "informacoes_destinos.json"
 USERS_FILE = "usuarios.json"
 ITINERARIES_FILE = "roteiros.json"
 
-
-# User methods
 def read_users():
     try:
         with open(USERS_FILE, "r") as file:
@@ -38,8 +34,24 @@ def get_user_by_id(user_id: str, users=None):
             return user
     return None
 
+def obter_informacoes_cidade(nome_cidade):
+    try:
+        # Carregar dados do arquivo informacoes_destinos.json
+        with open(INFORMACOES_DESTINOS_FILE, 'r', encoding='utf-8') as file:
+            destinos = json.load(file)
 
-# Coordinates methods
+        # Buscar informações da cidade no novo formato JSON
+        cidade_info = next((destino for destino in destinos["destinos"] if destino["cidade"] == nome_cidade), None)
+
+        if cidade_info is None:
+            raise HTTPException(status_code=404, detail=f"Informações não encontradas para a cidade '{nome_cidade}'")
+
+        # Retornar as informações
+        return {'informacoes_cidade': cidade_info}
+
+    except FileNotFoundError:
+        raise HTTPException(status_code=500, detail="Arquivo de dados não encontrado")
+
 def get_coordinates(cidade):
     endpoint = "https://nominatim.openstreetmap.org/search"
     params = {
@@ -51,7 +63,6 @@ def get_coordinates(cidade):
     data = response.json()
 
     if data:
-        # A resposta pode conter várias correspondências, escolha a primeira
         latitude = float(data[0]['lat'])
         longitude = float(data[0]['lon'])
         return latitude, longitude
@@ -69,9 +80,6 @@ def salvar_roteiros(roteiros):
     with open(ITINERARIES_FILE, "w") as file:
         json.dump(roteiros, file, indent=2)
 
-
-# ITINERARIES
-# Rota para adicionar um novo roteiro
 @app.post("/itineraries/add")
 def adicionar_roteiro(dados_roteiro: dict):
     roteiros = carregar_roteiros()
@@ -79,7 +87,6 @@ def adicionar_roteiro(dados_roteiro: dict):
     salvar_roteiros(roteiros)
     return {"message": "Roteiro adicionado com sucesso!"}
 
-# Rota para buscar roteiros pelo nome cidade e retornar aquele comm maior nota
 @app.get("/itineraries/search-itineraries/{nome_da_cidade}")
 def buscar_roteiro(nome_da_cidade: str):
     roteiros = carregar_roteiros()
@@ -110,12 +117,6 @@ def get_coordenadas(cidade_origem: str, cidade_destino: str):
     except HTTPException as e:
         raise e
 
-
-
-
-
-
-# função para obter recomendações personalizadas com base nas preferências do usuário
 @app.get("/user/personalized-recommendations/{user_id}")
 async def personalized_recommendations(user_id: str):
     users = read_users()
@@ -133,8 +134,6 @@ async def personalized_recommendations(user_id: str):
         roteiro_maior_nota = max(roteiros, key=lambda x: x["dados_roteiro"]["nota"])
         return {"recomendacoes": [roteiro_maior_nota]}
 
-# USERS
-# Ver usuários
 @app.get("/user/get_users")
 async def get_users():
     return read_users()
@@ -161,7 +160,6 @@ async def add_user(user_data: dict):
 
     return {"message": "Usuário adicionado com sucesso!", "id_usuario": user_id}
 
-# Editar informações do usuário
 @app.post("/user/update/{user_id}")
 async def update_user(user_id: str, updated_data: dict):
     users = read_users()
@@ -179,7 +177,6 @@ async def update_user(user_id: str, updated_data: dict):
     else:
         raise HTTPException(status_code=404, detail="Usuário não encontrado")
 
-# Deletar usuário
 @app.post("/user/delete/{user_id}")
 async def delete_user(user_id: str):
     users = read_users()
@@ -191,7 +188,6 @@ async def delete_user(user_id: str):
         return {"message": f"Usuário {user_id} deletado com sucesso!"}
     else:
         raise HTTPException(status_code=404, detail="Usuário não encontrado")
-
 
 @app.post("/user/copy-itinerary/{id_usuario_1}/{id_usuario_2}")
 async def copy_itinerary(id_usuario_1: str, id_usuario_2: str):
@@ -219,34 +215,6 @@ async def copy_itinerary(id_usuario_1: str, id_usuario_2: str):
     write_users(users)
 
     return {"message": "Itinerário copiado com sucesso"}
-
-
-
-
-
-
-
-
-
-def obter_informacoes_cidade(nome_cidade):
-    try:
-        # Carregar dados do arquivo informacoes_destinos.json
-        with open(INFORMACOES_DESTINOS_FILE, 'r', encoding='utf-8') as file:
-            destinos = json.load(file)
-
-        # Buscar informações da cidade no novo formato JSON
-        cidade_info = next((destino for destino in destinos["destinos"] if destino["cidade"] == nome_cidade), None)
-
-        if cidade_info is None:
-            raise HTTPException(status_code=404, detail=f"Informações não encontradas para a cidade '{nome_cidade}'")
-
-        # Retornar as informações
-        return {'informacoes_cidade': cidade_info}
-
-    except FileNotFoundError:
-        raise HTTPException(status_code=500, detail="Arquivo de dados não encontrado")
-
-
 
 @app.get("/cidade/{nome_cidade}")
 def get_informacoes_cidade(nome_cidade: str):

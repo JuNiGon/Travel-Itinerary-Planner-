@@ -101,41 +101,41 @@
             "valor_total": 450
         },
         "dados_voo": {
-            "valor_voo": 200,
-            "id_voo": "22323678",
+            "valor_voo": 100,
+            "id_voo": "22325423",
             "nome_do_voo": "GOL-1033",
             "assento": "c40",
             "data_da_partida": "13/01/2023",
             "origem": "palmas",
-            "destino": "Joao Pessoa"
+            "destino": "Aracaju"
         },
         "dados_hotel": {
-            "valor_hotel": 150,
+            "valor_hotel": 340,
             "id_hotel": "TRA-123",
-            "nome_da_cidade": "Joao Pessoa",
-            "hotel": "Ideas Park",
+            "nome_da_cidade": "Aracaju",
+            "hotel": "Hotelo",
             "reviews": [
-                "Gostei muito, nao voltaria",
+                "Gostei",
                 "Tava bom o pequi, mas sem galinha",
                 "Cidade feia"
             ],
             "nota": 1
         },
         "dados_roteiro": {
-            "valor_roteiro": 100,
-            "id_roteiro": "AAA-1111",
-            "nome_do_guia": "Pedro Cavalcante",
+            "valor_roteiro": 500,
+            "id_roteiro": "REA-1111",
+            "nome_do_guia": "Erick Gustavo",
             "lista_de_atividades": [
-                "Ir no lago",
+                "Andar",
                 "Comer pequi",
-                "Andar no parque"
+                "Saltar de parquedas"
             ],
             "reviews": [
                 "legal",
-                "Curti muito o calor, perdi 2kg",
-                "Cidade Feia"
+                "Emocionante",
+                "Cidade Bonita"
             ],
-            "nota": 2
+            "nota": 4
         },
         "id_usuario": "9f3a3bc6-0833-4d5a-859b-d444187931a2"
     },
