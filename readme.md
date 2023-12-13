@@ -2,15 +2,16 @@
 This travel itinerary system offers a variety of features to help users efficiently plan their trips. Below are the main functionalities of the system, along with the associated endpoints.
 
 ##installation
-    - postman
-	- vs code
-	- installation venv
-	- installation uvicorn (pip install uvicorn) (uvicorn app:app --reload)
-	- installation requesst (pip install requests)
-	- installation fastAPI (pip install fastapi uvicorn)
+    1. postman
+	2. vs code
+	3. installation venv
+	4. installation uvicorn (pip install uvicorn) (uvicorn app:app --reload)
+	5. installation requesst (pip install requests)
+	6. installation fastAPI (pip install fastapi uvicorn)
 
 
-##Applied Requirements
+##Applied Requirements  
+
     1. Itinerary Creation and Customization
         Create User:  POST /user/add
             -Creates a new user with hotel, flight, and itinerary data.
