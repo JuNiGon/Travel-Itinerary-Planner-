@@ -1,8 +1,8 @@
-##Travel Itinerary System  
+##TRAVEL ITINERARY SYSTEM  
 
 This travel itinerary system offers a variety of features to help users efficiently plan their trips. Below are the main functionalities of the system, along with the associated endpoints.
 
-##installation  
+##INSTALLATION  
 
     1. postman
 	2. vs code
@@ -12,7 +12,7 @@ This travel itinerary system offers a variety of features to help users efficien
 	6. installation fastAPI (pip install fastapi uvicorn)
 
 
-##Applied Requirements  
+##APPLIED REQUIREMENTS  
 
     1. Itinerary Creation and Customization
         Create User:  POST /user/add
@@ -63,7 +63,7 @@ This travel itinerary system offers a variety of features to help users efficien
             -Allows users to leave reviews when submitting a new itinerary.
 
 
-##Execução Postman
+##EXECUÇÃO POSTMAN  
 
     1. @app.get("/user/get_users")
         GET : http://127.0.0.1:8000/user/get_users
