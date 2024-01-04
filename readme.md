@@ -7,7 +7,7 @@ This travel itinerary system offers a variety of features to help users efficien
     1. postman
 	2. vs code
 	3. installation venv
-	4. installation uvicorn (pip install uvicorn) (uvicorn app:app --reload)
+	4. installation uvicorn (pip install uvicorn) (uvicorn main:app --reload)
 	5. installation requesst (pip install requests)
 	6. installation fastAPI (pip install fastapi uvicorn)
 
