@@ -143,6 +143,42 @@
         ],
         "nota": 1
       }
+    },
+    {
+      "dados_roteiro": {
+        "id_roteiro": "BCD-1245",
+        "nome_da_cidade": "Maceio",
+        "nome_do_guia": "Erick Lurdes",
+        "lista_de_atividades": [
+          "Biblioteca",
+          "Cantar",
+          "subir ladeira"
+        ],
+        "reviews": [
+          "Cansativo",
+          "Bom",
+          "Entediante"
+        ],
+        "nota": 3
+      }
+    },
+    {
+      "dados_roteiro": {
+        "id_roteiro": "BCD-1234",
+        "nome_da_cidade": "Maceio",
+        "nome_do_guia": "Joana",
+        "lista_de_atividades": [
+          "ir a praia",
+          "Nadar",
+          "comer tapioca"
+        ],
+        "reviews": [
+          "Calor",
+          "Bom",
+          "Bonito"
+        ],
+        "nota": 4
+      }
     }
   ]
 }
