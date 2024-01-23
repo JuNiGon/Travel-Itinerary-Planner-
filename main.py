@@ -5,26 +5,36 @@ import requests
 
 app = FastAPI()
 
-class UserManagement:
-    def __init__(self, users_file="usuarios.json"):
-        self.users_file = users_file
+class BaseManagement:
+    def __init__(self, file_name):
+        self.file_name = file_name
 
-    def read_users(self):
+    def read_data(self):
         try:
-            with open(self.users_file, "r") as file:
-                users_data = file.read()
-                if not users_data:
+            with open(self.file_name, "r") as file:
+                data = file.read()
+                if not data:
                     return []
-                return json.loads(users_data)
+                return json.loads(data)
         except FileNotFoundError:
             return []
 
-    def write_users(self, users):
-        with open(self.users_file, "w") as file:
-            json.dump(users, file)
+    def write_data(self, data):
+        with open(self.file_name, "w") as file:
+            json.dump(data, file)
+
+class UserManagement(BaseManagement):
+    def __init__(self, users_file="usuarios.json"):
+        super().__init__(users_file)
 
     def generate_user_id(self):
         return str(uuid.uuid4())
+
+    def read_users(self):
+        return self.read_data()
+
+    def write_users(self, users):
+        self.write_data(users)
 
     def get_user_by_id(self, user_id):
         users = self.read_users()
@@ -49,7 +59,6 @@ class UserManagement:
         else:
             raise HTTPException(status_code=404, detail="Usuário não encontrado")
 
-
     def delete_user(self, user_id: str):
         users = self.read_users()
         user = self.get_user_by_id(user_id)
@@ -60,7 +69,7 @@ class UserManagement:
             return {"message": f"Usuário {user_id} deletado com sucesso!"}
         else:
             raise HTTPException(status_code=404, detail="Usuário não encontrado")
-    
+
     def copy_itinerary(self, id_usuario_1: str, id_usuario_2: str):
         users = self.read_users()
 
@@ -86,22 +95,20 @@ class UserManagement:
         self.write_users(users)
 
         return {"message": "Itinerário copiado com sucesso"}
-
-
-class CityInformation:
+    
+class CityInformation(BaseManagement):
     def __init__(self, city_file="informacoes_destinos.json"):
-        self.city_file = city_file
+        super().__init__(city_file)
 
     def obter_informacoes_cidade(self, nome_cidade):
         try:
-            with open(self.city_file, 'r', encoding='utf-8') as file:
-                destinos = json.load(file)
+            destinos = self.read_data()
             cidade_info = next((destino for destino in destinos["destinos"] if destino["cidade"] == nome_cidade), None)
             if cidade_info is None:
-                raise HTTPException(status_code=404, detail=f"Informações não encontradas para a cidade '{nome_cidade}'")
+                raise ValueError(f"Informações não encontradas para a cidade '{nome_cidade}'")
             return {'informacoes_cidade': cidade_info}
         except FileNotFoundError:
-            raise HTTPException(status_code=500, detail="Arquivo de dados não encontrado")
+            raise ValueError("Arquivo de dados não encontrado")
 
     def get_coordinates(self, cidade):
         endpoint = "https://nominatim.openstreetmap.org/search"
@@ -116,30 +123,27 @@ class CityInformation:
             longitude = float(data[0]['lon'])
             return latitude, longitude
         else:
-            raise HTTPException(status_code=404, detail=f"Coordenadas não encontradas para a cidade: {cidade}")
-
-
-class ItineraryManagement:
+            raise ValueError(f"Coordenadas não encontradas para a cidade: {cidade}")
+        
+class ItineraryManagement(BaseManagement):
     def __init__(self, itinerary_file="roteiros.json"):
-        self.itinerary_file = itinerary_file
+        super().__init__(itinerary_file)
 
     def carregar_roteiros(self):
         try:
-            with open(self.itinerary_file, "r") as file:
-                return json.load(file)
+            return self.read_data()
         except FileNotFoundError:
             return {"roteiros": []}
 
     def salvar_roteiros(self, roteiros):
-        with open(self.itinerary_file, "w") as file:
-            json.dump(roteiros, file, indent=2)
+        self.write_data(roteiros)
 
     def personalized_recommendations(self, user_id: str):
-        users = UserManagement().read_users()
+        users = UserManagement().read_data()
         user = UserManagement().get_user_by_id(user_id)
         
         if user is None:
-            raise HTTPException(status_code=404, detail="Usuário não encontrado")
+            raise ValueError("Usuário não encontrado")
         
         cidade_origem_usuario = user["dados_voo"]["origem"]
         roteiros = self.carregar_roteiros()["roteiros"]
@@ -151,17 +155,16 @@ class ItineraryManagement:
         else:
             roteiro_maior_nota = max(roteiros, key=lambda x: x["dados_roteiro"]["nota"])
             return {"recomendacoes": [roteiro_maior_nota]}
-
-
+        
 itinerary_manager = ItineraryManagement()
 user_manager = UserManagement()
 city_manager = CityInformation()
 
-
 # Definição dos endpoints FastAPI
+app = FastAPI()
+
 @app.post("/itineraries/add")
 def adicionar_roteiro(dados_roteiro: dict):
-    itinerary_manager = ItineraryManagement()
     roteiros = itinerary_manager.carregar_roteiros()
     roteiros["roteiros"].append(dados_roteiro)
     itinerary_manager.salvar_roteiros(roteiros)
@@ -169,7 +172,6 @@ def adicionar_roteiro(dados_roteiro: dict):
 
 @app.get("/itineraries/search-itineraries/{nome_da_cidade}")
 def buscar_roteiro(nome_da_cidade: str):
-    itinerary_manager = ItineraryManagement()
     roteiros = itinerary_manager.carregar_roteiros()["roteiros"]
     roteiros_cidade = [r for r in roteiros if r["dados_roteiro"]["nome_da_cidade"] == nome_da_cidade]
     if not roteiros_cidade:
@@ -179,9 +181,8 @@ def buscar_roteiro(nome_da_cidade: str):
 
 @app.get("/maps/coordinates/")
 def get_coordenadas(cidade_origem: str, cidade_destino: str):
-    city_info = CityInformation()
-    coordenadas_origem = city_info.get_coordinates(cidade_origem)
-    coordenadas_destino = city_info.get_coordinates(cidade_destino)
+    coordenadas_origem = city_manager.get_coordinates(cidade_origem)
+    coordenadas_destino = city_manager.get_coordinates(cidade_destino)
     return {
         "cidades": [
             {"cidade_origem": cidade_origem, "coordenadas": {"latitude": coordenadas_origem[0], "longitude": coordenadas_origem[1]}},
@@ -191,22 +192,16 @@ def get_coordenadas(cidade_origem: str, cidade_destino: str):
 
 @app.get("/cidade/{nome_cidade}")
 def get_informacoes_cidade(nome_cidade: str):
-    city_info = CityInformation()
     try:
-        informacoes_cidade = city_info.obter_informacoes_cidade(nome_cidade)
+        informacoes_cidade = city_manager.obter_informacoes_cidade(nome_cidade)
         return informacoes_cidade
     except HTTPException as e:
         return {"Informação não encontrada": str(e)}
 
 @app.get("/user/get_users")
 def get_users():
-    user_manager = UserManagement()
     users = user_manager.read_users()
     return {"users": users}
-
-def generate_user_id():
-    """Gera e retorna um ID de usuário único."""
-    return str(uuid.uuid4())
 
 @app.post("/user/add")
 async def add_user(user_data: dict):
@@ -258,4 +253,3 @@ async def personalized_recommendations_endpoint(user_id: str):
 @app.post("/user/copy-itinerary/{id_usuario_1}/{id_usuario_2}")
 async def copy_itinerary_endpoint(id_usuario_1: str, id_usuario_2: str):
     return user_manager.copy_itinerary(id_usuario_1, id_usuario_2)
-
