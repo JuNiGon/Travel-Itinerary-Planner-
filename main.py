@@ -2,6 +2,9 @@ from fastapi import FastAPI, HTTPException
 import json
 import uuid
 import requests
+from fastapi import Path
+from fastapi import FastAPI, Path
+from urllib.parse import urljoin
 
 app = FastAPI()
 
@@ -11,7 +14,7 @@ class BaseManagement:
 
     def read_data(self):
         try:
-            with open(self.file_name, "r") as file:
+            with open(self.file_name, "r", encoding="utf-8") as file:
                 data = file.read()
                 if not data:
                     return []
@@ -156,6 +159,22 @@ class ItineraryManagement(BaseManagement):
             roteiro_maior_nota = max(roteiros, key=lambda x: x["dados_roteiro"]["nota"])
             return {"recomendacoes": [roteiro_maior_nota]}
         
+class FlightManagement(BaseManagement):
+    def __init__(self, flights_file="dados_voo.json"):
+        super().__init__(flights_file)
+
+    def carregar_data(self):
+        try:
+            return self.read_data()
+        except FileNotFoundError:
+            return {"dados_voo": []}
+
+    def salvar_data(self, dados_voo):
+        self.write_data(dados_voo)
+
+
+
+flight_manager = FlightManagement()
 itinerary_manager = ItineraryManagement()
 user_manager = UserManagement()
 city_manager = CityInformation()
@@ -177,16 +196,22 @@ def buscar_roteiro(nome_da_cidade: str):
     if not roteiros_cidade:
         raise HTTPException(status_code=404, detail="Roteiro não encontrado")
     roteiro_maior_nota = max(roteiros_cidade, key=lambda x: x["dados_roteiro"]["nota"])
-    return roteiro_maior_nota
+    return roteiros_cidade
 
 @app.get("/maps/coordinates/")
 def get_coordenadas(cidade_origem: str, cidade_destino: str):
+    # Obter coordenadas das cidades
     coordenadas_origem = city_manager.get_coordinates(cidade_origem)
     coordenadas_destino = city_manager.get_coordinates(cidade_destino)
+
+    # Gere o link para o Google Maps com as coordenadas diretamente
+    mapa_origem = f"https://www.google.com/maps/place/{coordenadas_origem[0]},{coordenadas_origem[1]}"
+    mapa_destino = f"https://www.google.com/maps/place/{coordenadas_destino[0]},{coordenadas_destino[1]}"
+
     return {
         "cidades": [
-            {"cidade_origem": cidade_origem, "coordenadas": {"latitude": coordenadas_origem[0], "longitude": coordenadas_origem[1]}},
-            {"cidade_destino": cidade_destino, "coordenadas": {"latitude": coordenadas_destino[0], "longitude": coordenadas_destino[1]}}
+            {"cidade_origem": cidade_origem, "coordenadas": {"latitude": coordenadas_origem[0], "longitude": coordenadas_origem[1], "mapa_link": mapa_origem}},
+            {"cidade_destino": cidade_destino, "coordenadas": {"latitude": coordenadas_destino[0], "longitude": coordenadas_destino[1], "mapa_link": mapa_destino}}
         ]   
     }
 
@@ -202,6 +227,17 @@ def get_informacoes_cidade(nome_cidade: str):
 def get_users():
     users = user_manager.read_users()
     return {"users": users}
+
+@app.get("/user/get_user/{user_id}")
+async def get_user(user_id: str = Path(..., description="ID do usuário")):
+    try:
+        user_info = user_manager.get_user_by_id(user_id)
+        if user_info is not None:
+            return {"user_info": user_info}
+        else:
+            raise HTTPException(status_code=404, detail="Usuário não encontrado")
+    except HTTPException as e:
+        return {"error": str(e)}
 
 @app.post("/user/add")
 async def add_user(user_data: dict):
@@ -253,3 +289,30 @@ async def personalized_recommendations_endpoint(user_id: str):
 @app.post("/user/copy-itinerary/{id_usuario_1}/{id_usuario_2}")
 async def copy_itinerary_endpoint(id_usuario_1: str, id_usuario_2: str):
     return user_manager.copy_itinerary(id_usuario_1, id_usuario_2)
+
+@app.post("/flights/add")
+def adicionar_dados_voo(dados_voo: dict):
+    voos_data = flight_manager.carregar_data()
+    dados_voo_key = "dados_voo"
+    if dados_voo_key not in voos_data:
+        voos_data[dados_voo_key] = []
+
+    voos_data[dados_voo_key].append(dados_voo)
+
+    flight_manager.salvar_data(voos_data)
+    
+    return {"message": "Dados de voo adicionados com sucesso!"}
+
+
+@app.get("/flights/search-flights/{nome_da_cidade}")
+def buscar_roteiro(nome_da_cidade: str):
+    voos_data = flight_manager.carregar_data()["dados_voo"]
+    
+    dados_voo_cidade = [r for r in voos_data if "origem" in r and r["origem"] == nome_da_cidade]
+    
+    if not dados_voo_cidade:
+        raise HTTPException(status_code=404, detail="Dados voo não encontrado")
+    
+    return dados_voo_cidade
+
+

@@ -1,0 +1,40 @@
+{
+    "dados_voo": [
+        {
+            "valor_voo": 200,
+            "id_voo": "22323678",
+            "nome_do_voo": "GOL-1033",
+            "assento": "c40",
+            "data_da_partida": "13/01/2023",
+            "origem": "Palmas",
+            "destino": "Joao Pessoa"
+        },
+        {
+            "valor_voo": 150,
+            "id_voo": "98765432",
+            "nome_do_voo": "AZUL-202",
+            "assento": "b22",
+            "data_da_partida": "15/01/2023",
+            "origem": "Palmas",
+            "destino": "Recife"
+        },
+        {
+            "valor_voo": 180,
+            "id_voo": "45678901",
+            "nome_do_voo": "LATAM-505",
+            "assento": "a15",
+            "data_da_partida": "20/01/2023",
+            "origem": "Maceio",
+            "destino": "Palmas"
+        },
+        {
+            "valor_voo": 280,
+            "id_voo": "432432",
+            "nome_do_voo": "LATAM-547",
+            "assento": "R35",
+            "data_da_partida": "20/03/2023",
+            "origem": "Aracaju",
+            "destino": "Rio de Janeiro"
+        }
+    ]
+}

@@ -30,6 +30,8 @@ This travel itinerary system offers a variety of features to help users efficien
     3. Booking Integration
         Add Itinerary:  POST /itineraries/add
             -Adds a new itinerary with hotel, flight, and activity data.
+        Add Data voos: POST /flights/add
+            -Adds a new data voo
 
     4. Collaborative Planning Tools
         Copy Itinerary POST /user/copy-itinerary/{user_id_1}/{user_id_2}
@@ -226,3 +228,12 @@ This travel itinerary system offers a variety of features to help users efficien
         GET : http://127.0.0.1:8000/cidade/{city_name}
         Example Input:
             http://127.0.0.1:8000/cidade/Palmas
+
+    11.@app.get("/user/get_user/{user_id}")
+        GET : http://127.0.0.1:8000/user/get_user/e637e53c-d046-49be-9e25-c3125111cf82
+
+    12.@app.post("/flights/add")
+        POST : http://127.0.0.1:8000/flights/add
+    
+    13.@app.get("/flights/search-flights/{nome_da_cidade}")
+        GET : http://127.0.0.1:8000/flights/search-flights/Palmas

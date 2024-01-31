@@ -1,184 +1,184 @@
 {
-  "roteiros": [
-    {
-      "dados_roteiro": {
-        "id_roteiro": "AAA-1111",
-        "nome_da_cidade": "Jatai",
-        "nome_do_guia": "Pedro Cavalcante",
-        "lista_de_atividades": [
-          "Ir no lago",
-          "Comer pequi",
-          "Andar no parque"
-        ],
-        "reviews": [
-          "Top demais",
-          "Curti muito o calor, perdi 2kg",
-          "Cidade Feia"
-        ],
-        "nota": 2
+    "roteiros": [
+      {
+        "dados_roteiro": {
+          "id_roteiro": "AAA-1111",
+          "nome_da_cidade": "Jatai",
+          "nome_do_guia": "Pedro Cavalcante",
+          "lista_de_atividades": [
+            "Ir no lago",
+            "Comer pequi",
+            "Andar no parque"
+          ],
+          "reviews": [
+            "Top demais",
+            "Curti muito o calor, perdi 2kg",
+            "Cidade Feia"
+          ],
+          "nota": 2
+        }
+      },
+      {
+        "dados_roteiro": {
+          "id_roteiro": "MMM-5484",
+          "nome_da_cidade": "Japao",
+          "nome_do_guia": "Jones Cavalcante",
+          "lista_de_atividades": [
+            "Ir no lago",
+            "Comer pequi",
+            "Andar no parque"
+          ],
+          "reviews": [
+            "Top demais",
+            "Curti muito o calor, perdi 2kg",
+            "Cidade Feia"
+          ],
+          "nota": 2
+        }
+      },
+      {
+        "dados_roteiro": {
+          "id_roteiro": "MMM-1234",
+          "nome_da_cidade": "Japao",
+          "nome_do_guia": "Ju",
+          "lista_de_atividades": [
+            "Ir no lago",
+            "Comer pequi",
+            "Andar no parque"
+          ],
+          "reviews": [
+            "Top demais",
+            "Curti muito o calor, perdi 2kg",
+            "Cidade Feia"
+          ],
+          "nota": 5
+        }
+      },
+      {
+        "dados_roteiro": {
+          "id_roteiro": "GRE-7899",
+          "nome_da_cidade": "GRECIA",
+          "nome_do_guia": "ANDREWWW",
+          "lista_de_atividades": [
+            "Ir no lago",
+            "Comer pequi",
+            "Andar no parque"
+          ],
+          "reviews": [
+            "Top demais",
+            "Curti muito o calor, perdi 2kg",
+            "Cidade Feia"
+          ],
+          "nota": 2
+        }
+      },
+      {
+        "dados_roteiro": {
+          "id_roteiro": "BfA-1111",
+          "nome_da_cidade": "Palmas",
+          "nome_do_guia": "Lucas Cavalcante",
+          "lista_de_atividades": [
+            "Ir no lago",
+            "Comer pequi",
+            "Andar no parque"
+          ],
+          "reviews": [
+            "Top demais",
+            "Curti muito o calor, perdi 2kg",
+            "Cidade Feia"
+          ],
+          "nota": 1
+        }
+      },
+      {
+        "dados_roteiro": {
+          "id_roteiro": "BfA-1111",
+          "nome_da_cidade": "Palmas",
+          "nome_do_guia": "Lucas Cavalcante",
+          "lista_de_atividades": [
+            "Ir no lago",
+            "Comer pequi",
+            "Andar no parque"
+          ],
+          "reviews": [
+            "Top demais",
+            "Curti muito o calor, perdi 2kg",
+            "Cidade Feia"
+          ],
+          "nota": 1
+        }
+      },
+      {
+        "dados_roteiro": {
+          "id_roteiro": "BfA-1901",
+          "nome_da_cidade": "Palmas",
+          "nome_do_guia": "Lucas Cavalcante",
+          "lista_de_atividades": [
+            "Ir no lago",
+            "Comer pequi",
+            "Andar no parque"
+          ],
+          "reviews": [
+            "Top demais",
+            "Curti muito o calor, perdi 2kg",
+            "Cidade Feia"
+          ],
+          "nota": 3
+        }
+      },
+      {
+        "dados_roteiro": {
+          "id_roteiro": "GHF-1901",
+          "nome_da_cidade": "Aracaju",
+          "nome_do_guia": "Roberto",
+          "lista_de_atividades": [
+            "Ir no lago",
+            "Comer pequi",
+            "Andar no parque"
+          ],
+          "reviews": [
+            "Top demais",
+            "Curti muito o calor, perdi 2kg",
+            "Cidade Feia"
+          ],
+          "nota": 1
+        }
+      },
+      {
+        "dados_roteiro": {
+          "id_roteiro": "BCD-1245",
+          "nome_da_cidade": "Maceio",
+          "nome_do_guia": "Erick Lurdes",
+          "lista_de_atividades": [
+            "Biblioteca",
+            "Cantar",
+            "subir ladeira"
+          ],
+          "reviews": [
+            "Cansativo",
+            "Bom",
+            "Entediante"
+          ],
+          "nota": 3
+        }
+      },
+      {
+        "dados_roteiro": {
+          "id_roteiro": "BCD-1234",
+          "nome_da_cidade": "Maceio",
+          "nome_do_guia": "Joana",
+          "lista_de_atividades": [
+            "ir a praia",
+            "Nadar",
+            "comer tapioca"
+          ],
+          "reviews": [
+            "Calor",
+            "Bom",
+            "Bonito"
+          ],
+          "nota": 4
+        }
       }
-    },
-    {
-      "dados_roteiro": {
-        "id_roteiro": "MMM-5484",
-        "nome_da_cidade": "Japao",
-        "nome_do_guia": "Jones Cavalcante",
-        "lista_de_atividades": [
-          "Ir no lago",
-          "Comer pequi",
-          "Andar no parque"
-        ],
-        "reviews": [
-          "Top demais",
-          "Curti muito o calor, perdi 2kg",
-          "Cidade Feia"
-        ],
-        "nota": 2
-      }
-    },
-    {
-      "dados_roteiro": {
-        "id_roteiro": "MMM-1234",
-        "nome_da_cidade": "Japao",
-        "nome_do_guia": "Ju",
-        "lista_de_atividades": [
-          "Ir no lago",
-          "Comer pequi",
-          "Andar no parque"
-        ],
-        "reviews": [
-          "Top demais",
-          "Curti muito o calor, perdi 2kg",
-          "Cidade Feia"
-        ],
-        "nota": 5
-      }
-    },
-    {
-      "dados_roteiro": {
-        "id_roteiro": "GRE-7899",
-        "nome_da_cidade": "GRECIA",
-        "nome_do_guia": "ANDREWWW",
-        "lista_de_atividades": [
-          "Ir no lago",
-          "Comer pequi",
-          "Andar no parque"
-        ],
-        "reviews": [
-          "Top demais",
-          "Curti muito o calor, perdi 2kg",
-          "Cidade Feia"
-        ],
-        "nota": 2
-      }
-    },
-    {
-      "dados_roteiro": {
-        "id_roteiro": "BfA-1111",
-        "nome_da_cidade": "Palmas",
-        "nome_do_guia": "Lucas Cavalcante",
-        "lista_de_atividades": [
-          "Ir no lago",
-          "Comer pequi",
-          "Andar no parque"
-        ],
-        "reviews": [
-          "Top demais",
-          "Curti muito o calor, perdi 2kg",
-          "Cidade Feia"
-        ],
-        "nota": 1
-      }
-    },
-    {
-      "dados_roteiro": {
-        "id_roteiro": "BfA-1111",
-        "nome_da_cidade": "Palmas",
-        "nome_do_guia": "Lucas Cavalcante",
-        "lista_de_atividades": [
-          "Ir no lago",
-          "Comer pequi",
-          "Andar no parque"
-        ],
-        "reviews": [
-          "Top demais",
-          "Curti muito o calor, perdi 2kg",
-          "Cidade Feia"
-        ],
-        "nota": 1
-      }
-    },
-    {
-      "dados_roteiro": {
-        "id_roteiro": "BfA-1901",
-        "nome_da_cidade": "Palmas",
-        "nome_do_guia": "Lucas Cavalcante",
-        "lista_de_atividades": [
-          "Ir no lago",
-          "Comer pequi",
-          "Andar no parque"
-        ],
-        "reviews": [
-          "Top demais",
-          "Curti muito o calor, perdi 2kg",
-          "Cidade Feia"
-        ],
-        "nota": 3
-      }
-    },
-    {
-      "dados_roteiro": {
-        "id_roteiro": "GHF-1901",
-        "nome_da_cidade": "Aracaju",
-        "nome_do_guia": "Roberto",
-        "lista_de_atividades": [
-          "Ir no lago",
-          "Comer pequi",
-          "Andar no parque"
-        ],
-        "reviews": [
-          "Top demais",
-          "Curti muito o calor, perdi 2kg",
-          "Cidade Feia"
-        ],
-        "nota": 1
-      }
-    },
-    {
-      "dados_roteiro": {
-        "id_roteiro": "BCD-1245",
-        "nome_da_cidade": "Maceio",
-        "nome_do_guia": "Erick Lurdes",
-        "lista_de_atividades": [
-          "Biblioteca",
-          "Cantar",
-          "subir ladeira"
-        ],
-        "reviews": [
-          "Cansativo",
-          "Bom",
-          "Entediante"
-        ],
-        "nota": 3
-      }
-    },
-    {
-      "dados_roteiro": {
-        "id_roteiro": "BCD-1234",
-        "nome_da_cidade": "Maceio",
-        "nome_do_guia": "Joana",
-        "lista_de_atividades": [
-          "ir a praia",
-          "Nadar",
-          "comer tapioca"
-        ],
-        "reviews": [
-          "Calor",
-          "Bom",
-          "Bonito"
-        ],
-        "nota": 4
-      }
-    }
-  ]
-}
+    ]
+  }
